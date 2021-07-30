@@ -1,0 +1,18 @@
+@media (max-width: 530px) {
+  .form {
+    &__group {
+      flex-basis: 100%;
+    }
+    &__description {
+      text-align: center;
+    }
+    &__error {
+      padding-left: 5px;
+    }
+    &__group:nth-child(2),
+    &__group:nth-child(3),
+    &__description {
+      margin-top: 50px;
+    }
+  }
+}

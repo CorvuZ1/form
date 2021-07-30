@@ -1,0 +1,31 @@
+$path: "fonts/Roboto/";
+
+@font-face {
+  font-family: "Roboto"; 
+  src: url("#{$path}Roboto-Black.ttf");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto"; 
+  src: url("#{$path}Roboto-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto"; 
+  src: url("#{$path}Roboto-Bold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@mixin font($fontWeight, $fontStyle) {
+  font-weight: $fontWeight;
+  font-style: $fontStyle;
+}
+
+@mixin fontSize($origFontSize, $minFontSize) {
+  font-size: calc(#{$minFontSize + px} + (#{$origFontSize - $minFontSize}) * ((100vw - 320px) / (1920 - 320)));
+}

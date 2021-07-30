@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Обратная связь</title>
+</head>
+<body>
+  <form class="form" action="#">
+    <fieldset>
+      <legend class="form__title">Обратная связь</legend>
+      <div class="form__data">
+        <div class="form__personal-container">
+          <div class="form__group">
+            <input class="form__input" placeholder=" " id="form-name" type="text" name="Имя">
+            <label class="form__label" for="form-name">Имя</label>
+            <span class="form__error"></span>
+          </div>
+
+          <div class="form__group">
+            <input class="form__input" placeholder=" "  id="form-phone" type="tel" name="Телефон">
+            <label class="form__label" for="form-phone">Телефон</label>
+            <span class="form__error"></span>
+          </div>
+
+          <div class="form__group">
+            <input class="form__input" placeholder=" " id="form-email" type="text" name="Эл. почта"> 
+            <label class="form__label" for="form-email">Эл. почта</label>
+            <span class="form__error"></span>
+          </div>
+
+          <div class="form__group">
+            <textarea class="form__input" placeholder=" "  id="form-message" name="Сообщение"></textarea>
+            <label class="form__label" for="form-message">Сообщение</label>
+            <span class="form__error"></span>
+          </div>
+        </div>
+      
+        <p class="form__description">
+          Отправляя форму вы соглашаетесь с 
+          <a href="#privacy">пользовательским соглашением</a>
+          и 
+          <a href="#eula">политикой конфиденциальности</a>
+        </p>
+
+      <button class="form__submit">Отправить</button>
+    </div>
+    </fieldset>
+  </form>
+  <script type="module" src="scripts/formScript.js"></script>
+  <script type="module" src="scripts/phoneMask.js"></script>
+</body>
+</html>

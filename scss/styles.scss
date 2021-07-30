@@ -1,0 +1,148 @@
+@import "_font.scss";
+$red: #F36363;
+
+
+* {
+  outline: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  color: #000000;
+  box-sizing: border-box;
+  font-family: "Roboto";
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+}
+
+body {
+  background-color: #E5E5E5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  background-color: #ffffff;
+  padding: 40px 54px 35px 54px;
+  min-height: 632px;
+  margin: 15px;
+  max-width: 600px;
+  &__title {
+    @include fontSize(35,30);
+    @include font(900, normal);
+  }
+  &__data {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__personal-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  &__group {
+    position: relative;
+    height: 50px;
+    flex-basis: calc(50% - 6px);
+    &:nth-child(3) {
+      flex-grow: 0;
+      margin-top: 35px;
+    }
+    &:last-child {
+      flex-basis: 100%;
+      margin-top: 50px;
+      height: 150px;
+    }
+  }
+  &__group:last-child {
+    & .form__label {
+      transform: translateY(-137px) translateX(20px);
+    }
+    & .form__input {
+      padding: 15px 20px;
+    }
+  }
+  &__label {
+    font-size: 16px;
+    color: rgb(165, 165, 165);
+    display: block;
+    transform: translateY(-33px) translateX(20px);
+    transition: all 0.3s;
+    transform-origin: 133px 0px;
+    @include font(400, normal);
+    &_error {
+      color: $red;
+    }
+  }
+  &__input {
+    font-size: 16px;
+    padding: 0 20px;
+    transition: all 0.5s;
+    border: 1px solid #A5A5A5;
+    color: #1C1C1C;
+    resize: none;
+    width: 100%;
+    height: 100%;
+    @include font(400, normal);
+    &::placeholder {
+      color: transparent;
+    }
+  }
+  &__input:focus + &__label,
+  &__input:not(:placeholder-shown) + &__label {
+    transform: translateY(-67px) scale(0.85);
+  }
+
+  &__group:last-child &__input:focus + &__label,
+  &__group:last-child &__input:not(:placeholder-shown) + &__label {
+    transform: translateY(-171px) scale(0.85);
+  }
+  &__description {
+    margin-top: 30px;
+    @include font(400, normal);
+    font-size: 13px;
+    text-align: justify;
+    padding: 0 15px;
+  }
+  &__submit {
+    margin-top: 30px;
+    background-color: rgb(249, 199, 59);
+    max-width: 220px;
+    width: 100%;
+    height: 50px;
+    @include font(700, normal);
+    font-size: 14px;
+    cursor: pointer;
+    &:disabled {
+      background-color: gray;
+      cursor: default;
+    }
+  }
+  &__input, &__submit {
+    border-radius: 5px;
+  }
+  &__error {
+    color: $red;
+    font-size: 12px;
+    display: block;
+    position: relative;
+    top: -17px;
+    padding-left: 18px;
+  }
+  &__input_invalid,
+  &_invalid {
+    border: 1px solid $red;
+  }
+  &_valid {
+    border: 1px solid rgb(1, 177, 1);
+  }
+}
+
+@import "_media.scss";
